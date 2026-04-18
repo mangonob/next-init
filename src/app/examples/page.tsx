@@ -1,3 +1,5 @@
+import { Button } from "@/components/retroui/Button";
+
 export default function Examples() {
-  return <h1>Examples</h1>;
+  return <Button>Examples</Button>;
 }
