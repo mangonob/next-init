@@ -1,13 +1,26 @@
 'use client'
 
+import { useState } from 'react'
+
 import { Button } from '@/components/retroui/Button'
-import { Camera } from 'lucide-react'
 
 export default function Examples() {
+  const [count, setCount] = useState(0)
+
+  if (count % 2 === 0) {
+    setCount(count + 1)
+  }
+
   return (
-    <Button onClick={console.info} disabled>
-      Examples
-      <Camera />
-    </Button>
+    <div className="p-4 flex flex-row gap-2 items-center">
+      <Button onClick={() => setCount(count + 1)}>Examples</Button>
+      {count}
+      <Child />
+    </div>
   )
+}
+
+function Child() {
+  console.info('Child rendered')
+  return <span>Child</span>
 }

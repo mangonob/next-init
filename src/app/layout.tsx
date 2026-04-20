@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
 import { Archivo_Black, Space_Grotesk } from 'next/font/google'
+
+import type { Metadata } from 'next'
 import './globals.css'
 
 const archivoBlack = Archivo_Black({
