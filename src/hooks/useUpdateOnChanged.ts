@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
-export type UseChangedOptions<T> = {
+export type UseUpdateOnChangedOptions<T> = {
   immediate?: boolean
   comparator?: (lhs: T, rhs: T | undefined) => boolean
 }
 
-export function useChanged<T>(
+export function useUpdateOnChanged<T>(
   value: T,
   onChanged: (_: T) => void,
-  options?: UseChangedOptions<T>,
+  options?: UseUpdateOnChangedOptions<T>,
 ) {
   const { immediate = false, comparator = Object.is } = options || {}
 

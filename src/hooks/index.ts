@@ -1,1 +1,1 @@
-export * from './useChanged'
+export * from './useUpdateOnChanged'
