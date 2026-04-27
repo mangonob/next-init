@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 import { Button } from '@/components/retroui/Button'
 import { Input } from '@/components/retroui/Input'
-import { useChanged } from '@/hooks/useChanged'
+import { useUpdateOnChanged } from '@/hooks/useUpdateOnChanged'
 
 export default function Examples() {
   'use no memo'
@@ -17,7 +17,7 @@ export default function Examples() {
     fetchData().then(newData => setData(newData as number[]))
   })
 
-  useChanged(data, newData => {
+  useUpdateOnChanged(data, newData => {
     if (newData.length) {
       setValue(newData.map(String).join(','))
     }
