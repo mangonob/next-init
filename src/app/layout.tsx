@@ -1,4 +1,5 @@
 import { Archivo_Black, Space_Grotesk } from 'next/font/google'
+import { ProgressBarProvider, ProgressBar } from 'react-transition-progress'
 
 import type { Metadata } from 'next'
 import './globals.css'
@@ -29,7 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${archivoBlack.variable} ${space.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ProgressBarProvider>
+          <ProgressBar className="fixed h-0.5 bg-sky-500 top-0" />
+          {children}
+        </ProgressBarProvider>
+      </body>
     </html>
   )
 }
