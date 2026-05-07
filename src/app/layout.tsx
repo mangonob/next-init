@@ -1,3 +1,4 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter'
 import { Archivo_Black, Space_Grotesk } from 'next/font/google'
 import { ProgressBarProvider, ProgressBar } from 'react-transition-progress'
 
@@ -31,10 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${archivoBlack.variable} ${space.variable}`}>
       <body>
-        <ProgressBarProvider>
-          <ProgressBar className="fixed h-0.5 bg-sky-500 top-0" />
-          {children}
-        </ProgressBarProvider>
+        <AppRouterCacheProvider>
+          <ProgressBarProvider>
+            <ProgressBar className="fixed h-0.5 bg-sky-500 top-0" />
+            {children}
+          </ProgressBarProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   )

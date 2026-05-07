@@ -1,6 +1,7 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Button, Input } from '@mui/material'
 import { useMemoizedFn } from 'ahooks'
 import cc from 'classcat'
 import {
@@ -13,8 +14,6 @@ import {
 } from 'react-hook-form'
 import * as z from 'zod'
 
-import { Button } from '@/components/retroui/Button'
-import { Input } from '@/components/retroui/Input'
 import { flatMap } from '@/utils'
 
 import styles from './index.module.scss'
@@ -75,15 +74,10 @@ export default function FormExample() {
             onRemove={() => remove(index)}
           />
         ))}
-        {flatMap(
-          errors.items?.message || errors.items?.root?.message,
-          e => e,
-        )(e => <span role="danger">{e}</span>).run()}
-        <Button
-          variant="secondary"
-          type="button"
-          onClick={() => append({ age: 10, name: '' })}
-        >
+        {flatMap(errors.items?.message || errors.items?.root?.message, e => (
+          <span role="danger">{e}</span>
+        )).run()}
+        <Button type="button" onClick={() => append({ age: 10, name: '' })}>
           +
         </Button>
         <Button type="submit">Submit</Button>
@@ -132,15 +126,11 @@ export function User({ level = 0, name, onRemove }: UserProps) {
           })}
         />
         {(!fields || fields.length <= 0) && (
-          <Button variant="outline" type="button" onClick={onRemove}>
+          <Button type="button" onClick={onRemove}>
             -
           </Button>
         )}
-        <Button
-          variant="outline"
-          type="button"
-          onClick={() => append({ age: 10, name: '' })}
-        >
+        <Button type="button" onClick={() => append({ age: 10, name: '' })}>
           +
         </Button>
       </div>

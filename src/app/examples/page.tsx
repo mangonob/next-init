@@ -1,11 +1,10 @@
 'use client'
 
+import { Button, Input } from '@mui/material'
 import { useMemoizedFn } from 'ahooks'
 import { random } from 'lodash-es'
 import { useState } from 'react'
 
-import { Button } from '@/components/retroui/Button'
-import { Input } from '@/components/retroui/Input'
 import { useUpdateOnChanged } from '@/hooks/useUpdateOnChanged'
 
 export default function Examples() {

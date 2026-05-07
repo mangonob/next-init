@@ -1,0 +1,39 @@
+.draggable-grid {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(var(--draggable-grid-column-count, 12), 1fr);
+  align-items: start;
+  gap: var(--draggable-grid-gap);
+  column-gap: var(--draggable-grid-column-gap);
+
+  .draggable-grid__item {
+    .draggable-grid__item-handle {
+      cursor: grab;
+    }
+  }
+}
+
+:is(:root, :host) [data-dnd-placeholder='hidden'] {
+  visibility: visible;
+  border-radius: var(--draggable-grid-placeholder-border-radius, 8px);
+  box-shadow: inset 0 0 0 2px var(--draggable-grid-placeholder-border, #2b7fff);
+  position: relative;
+
+  & > * {
+    visibility: hidden;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(
+      --draggable-grid-placeholder-background,
+      rgba(43, 127, 255, 0.1)
+    );
+    border-radius: inherit;
+  }
+}
