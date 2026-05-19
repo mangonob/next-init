@@ -1,8 +1,9 @@
 import { DragDropProvider } from '@dnd-kit/react'
-import cc from 'classcat'
 import { CSSProperties, HTMLAttributes, useId, useMemo } from 'react'
 
 import './index.scss'
+
+import cc from '../../utils/classname'
 
 import DraggableGridItem from './DraggableGridItem'
 import useDragEvents from './hooks'

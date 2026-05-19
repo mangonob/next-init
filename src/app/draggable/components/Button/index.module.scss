@@ -1,0 +1,37 @@
+.button {
+  &:global(.ant-btn.ant-btn) {
+    --ant-border-radius: 4px;
+    --ant-button-content-font-size: 11px;
+    --ant-button-content-font-size-lg: 13px;
+    --ant-button-padding-inline: 8px;
+    --ant-button-padding-inline-lg: 16px;
+    --ant-control-height: 28px;
+    --ant-control-height-lg: 30px;
+  }
+
+  &:global(.ant-btn.ant-btn-text.ant-btn-text) {
+    --ant-btn-text-color: var(--monitor-secondary-text-color);
+    --ant-btn-text-color-hover: var(--monitor-secondary-text-color);
+    --ant-btn-text-color-active: var(--monitor-secondary-text-color);
+  }
+
+  &:global(.ant-btn.ant-btn-default.ant-btn-default) {
+    --ant-btn-text-color: var(--monitor-button-default-text-color);
+    --ant-btn-text-color-hover: var(--monitor-button-default-text-color);
+    --ant-btn-text-color-active: var(--monitor-button-default-text-color);
+
+    --ant-btn-border-color: var(--monitor-button-default-border-color);
+    --ant-btn-border-color-hover: var(--monitor-button-default-border-color);
+    --ant-btn-border-color-active: var(--monitor-button-default-border-color);
+
+    --ant-btn-bg-color: var(--monitor-button-default-background-color);
+    --ant-btn-bg-color-hover: var(--monitor-button-default-background-color);
+    --ant-btn-bg-color-active: var(--monitor-button-default-background-color);
+  }
+
+  &:global(.ant-btn.ant-btn-primary.ant-btn-primary) {
+    --ant-btn-bg-color: var(--monitor-button-primary-background-color);
+    --ant-btn-bg-color-hover: var(--monitor-button-primary-background-color);
+    --ant-btn-bg-color-active: var(--monitor-button-primary-background-color);
+  }
+}

@@ -1,0 +1,27 @@
+.input {
+  &:global(.ant-input.ant-input),
+  &:global(.ant-input-affix-wrapper.ant-input-affix-wrapper) {
+    --ant-input-padding-block: 2px;
+    --ant-input-padding-inline: 8px;
+    --ant-color-bg-container: var(--monitor-input-background-color);
+    --ant-input-active-bg: var(--monitor-input-background-color);
+    --ant-input-hover-bg: var(--monitor-input-background-color);
+    --ant-color-border: var(--monitor-input-border-color);
+    --ant-input-hover-border-color: var(--monitor-input-border-color);
+    --ant-input-active-border-color: var(--monitor-input-border-color);
+    --ant-input-active-shadow: none;
+    --ant-border-radius: 4px;
+    --ant-input-input-font-size: 11px;
+    --ant-line-height: 22px;
+    --ant-color-text: var(--monitor-primary-text-color);
+
+    &::placeholder,
+    input::placeholder {
+      color: #777;
+    }
+
+    :global(.anticon.anticon-close-circle) {
+      color: var(--monitor-secondary-text-color);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .breathing-light {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgb(34, 197, 94);
+    box-shadow: rgb(34, 197, 94) 0px 0px 6px;
+    animation: 2s ease 0s infinite normal none running pulse;
+  }
+}

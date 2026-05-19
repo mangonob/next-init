@@ -1,0 +1,65 @@
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.tag-root {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  font-size: 10px;
+  align-items: center;
+  gap: 4px;
+
+  &.warning {
+    color: var(--monitor-text-color-warning);
+    --dot-el-background-color: var(--monitor-text-color-warning);
+  }
+
+  &.error {
+    color: var(--monitor-text-color-error);
+    --dot-el-background-color: var(--monitor-text-color-error);
+
+    .dot-el {
+      animation: 1.5s ease 0s infinite normal none running pulse;
+    }
+  }
+
+  &.tag {
+    span {
+      padding: 1 6px;
+      border-radius: 3px;
+    }
+
+    &.warning span {
+      background-color: #fbbf2422;
+    }
+
+    &.error span {
+      background-color: #f8717122;
+    }
+  }
+
+  &.breating {
+    --nop: nop;
+  }
+
+  &.dot {
+    --nop: nop;
+  }
+
+  .dot-el {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dot-el-background-color);
+    display: inline-block;
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,63 @@
+:root {
+  --monitor-content-background: #080d1a;
+  --monitor-card-background: #0f1626;
+  --monitor-primary-border: #2a3a52;
+
+  --monitor-primary-text-color: #f1f5f9;
+  --monitor-secondary-text-color: #cbd5e1;
+  --monitor-tertiary-text-color: #9ca3af;
+
+  --monitor-text-color-error: #f87171;
+  --monitor-text-color-warning: #fbbf24;
+
+  --monitor-button-default-text-color: #60a5fa;
+  --monitor-button-default-border-color: #60a5fa66;
+  --monitor-button-default-background-color: #60a5fa2e;
+
+  --monitor-button-primary-background-color: #60a5fa;
+
+  --monitor-input-background-color: #ffffff0d;
+  --monitor-input-border-color: #2a3a52;
+}
+
+.monitor-page {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--monitor-content-background);
+  color: var(--monitor-primary-text-color);
+
+  .side {
+    width: 0px;
+    overflow-x: hidden;
+
+    &.open {
+      width: 240px;
+      border-right: 1px solid var(--monitor-primary-border);
+    }
+
+    transition: width 0.25s ease;
+  }
+
+  .main {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .header,
+    .toolbar {
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--monitor-primary-border);
+    }
+
+    .content {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.card {
+  padding: var(--monitor-card-padding, 16px);
+  border: 1px solid var(--monitor-primary-border);
+  border-radius: 8px;
+  background-color: var(--monitor-card-background);
+}
